@@ -3,23 +3,32 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import linkedinLogo from "../assets/linkedin-logo.svg";
 import heroimg from "../assets/hero-right.png";
+import { useContext } from "react";
+import { GlobalContext } from "../context/GlobalContext";
 export default function Header() {
+  const { headerData, darkMode, setDarkMode} = useContext(GlobalContext);
+  
+  function handleDarkModeChange(event) {
+  setDarkMode(event.target.checked);
+  console.log(event.target.checked);
+}
+
   return (
     <div id="header">
       <div id="arkaplan">
-        <section id="left" className="bg-[#4731D3]"></section>
-        <section id="right" className="bg-[#CBF281]"></section>
+        <section id="left" className={`${darkMode?"bg-[#000000]" :"bg-[#4731D3]" }`}></section>
+        <section id="right" className={`${darkMode?"bg-[#000000]" :"bg-[#CBF281]" }`} ></section>
       </div>
       <div id="ust">
-        <p className="text-[32px] text-[#CBF281]">Hamza</p>
+        <p className={`${darkMode ? " text-[#ffffff]" : " text-[#CBF281]"} text-[32px]`}>{headerData.name}</p>
 
         <section id="langDark">
           <a id="language" href="#" className="no-underline">
-            <span className="text-[15px] text-[#CBF281]">TÜRKÇE</span>
+            <span className={`${darkMode ? "text-[#D9D9D9]" : " text-[#CBF281]"} text-[15px]`}>TÜRKÇE</span>
             <span className="text-[15px] text-[#D9D9D9]">’YE GEÇ</span>
           </a>
           <label className="pl relative inline-flex items-center cursor-pointer">
-            <input type="checkbox" value="" className="sr-only peer" />
+            <input type="checkbox" checked={darkMode} onChange={handleDarkModeChange} value="" className="sr-only peer" />
             <div
               className="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4
              dark:bg-white peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full
@@ -28,23 +37,23 @@ export default function Header() {
               after:rounded-full after:h-5 after:w-5 after:transition-all
                peer-checked:bg-[#8F88FF]"
             ></div>
-            <span className="ms-3 pr-7 font-medium text-gray-900 dark:text-[#4731D3]">
-              Dark Mode
+            <span className={`${ darkMode? "ms-3 mr-[-24px] pr-7 font-medium text-gray-900 dark:text-[#ffffff]":"ms-3 mr-[-24px] pr-7 font-medium text-gray-900 dark:text-[#4731D3]"}`}>
+              {darkMode ? "Dark Mode On" : "Dark Mode Off"}
             </span>
           </label>
         </section>
       </div>
       <div id="orta">
         <section className="w-[55%] flex flex-col gap-7" id="baslikyazılogolar">
-          <h1 className="text-[#CBF281] font-bold text-[54px] leading-[110%] ">
-            I am a Frontend Developer...
+          <h1 className={`${darkMode ? "text-[#ffffff]" : "text-[#CBF281]"} font-bold text-[54px] leading-[110%]`}>
+            {headerData.title}
           </h1>
           <p className="text-white text-[24px] ">
-            ...who likes to craft solid and scalable frontend products with
-            great user experiences.
+            {headerData.text}
           </p>
           <div id="logolar">
             <button>
+              <a href={headerData.github}>
             <div id="github">
               <div className="bg-[#ffffff]  w-[127px] h-[52px] gap-2 items-center rounded-[6px] p-2 flex">
                 <FontAwesomeIcon
@@ -58,8 +67,10 @@ export default function Header() {
                 </p>
               </div>
             </div>
+            </a>
             </button>
             <button>
+              <a href={headerData.linkedin}>
             <div id="linkedin">
               <div className="bg-[#ffffff]  w-[127px] h-[52px] gap-2 items-center rounded-[6px] p-2 flex">
                 <img
@@ -73,6 +84,7 @@ export default function Header() {
                 </p>
               </div>
             </div>
+            </a>
             </button>
           </div>
         </section>

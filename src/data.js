@@ -1,15 +1,14 @@
-
+import heroimg from "./assets/hero-right.png";
 import Skills from "./components/Skills";
 
 export const data = { 
     HeaderSection: [
-    { id: 1, text: "Hamza" },
-    { id: 2, text: "I am a Frontend Developer..." },
-    { id: 3, text: "...who likes to craft solid and scalable frontend products with great user experiences." },
-    { id: 4, text: "Github" },
-    { id: 5, text: "Linkedin" },
-    { id: 6, text: "img" }
-    
+    { name: "Hamza" },
+    { title: "I am a Frontend Developer..." },
+    {text: "...who likes to craft solid and scalable frontend products with great user experiences." },
+    { github: "https://github.com/hmzdnzl" },
+    { linkedin: "https://www.linkedin.com/in/hmzdnzl/" },
+    { img: heroimg }
 ], 
 SkillsSection: [
     { id: 1, skill: "HTML", level: "Advanced" },
