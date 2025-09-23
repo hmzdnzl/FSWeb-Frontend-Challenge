@@ -1,5 +1,11 @@
 import heroimg from "./assets/hero-right.png";
 import Skills from "./components/Skills";
+import figmalogo from "./assets/skills/figma-logo.png"
+import jslogo from "./assets/skills/js-logo.png"
+import reactlogo from "./assets/skills/react-logo.png"
+import reduxlogo from "./assets/skills/redux-logo.png"
+import nodelogo from "./assets/skills/node-logo.png"
+import vscode from "./assets/skills/vscode-logo.png"
 
 export const data = { 
     HeaderSection: [
@@ -11,10 +17,13 @@ export const data = {
     { img: heroimg }
 ], 
 SkillsSection: [
-    { id: 1, skill: "HTML", level: "Advanced" },
-    { id: 2, skill: "CSS", level: "Intermediate" },
-    { id: 3, skill: "JavaScript", level: "Advanced" },
-    { id: 4, skill: "React", level: "Intermediate" }
+    {title:"Skills"},
+    { id: 1, name: "JAVASCRIPT", logo: jslogo },
+    { id: 2, name: "REACT", logo: reactlogo },
+    { id: 3, name: "REDUX", logo: reduxlogo },
+    { id: 4, name: "NODE", logo: nodelogo },
+    { id: 5, name: "VS CODE", logo: vscode },
+    { id: 6, name: "FIGMA", logo: figmalogo }
 ],
 ProfileSection: {
     name: "Ali Veli",
