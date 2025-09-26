@@ -32,6 +32,8 @@ img:{},
       {text:""}
     ]
   });
+  const [projectData, setProjectData] = useState([]);
+  const [projectTitle, setProjectTitle] = useState("");
 
    useEffect(() => {
     setProfileData({
@@ -57,6 +59,10 @@ img:{},
       linkedin: data.HeaderSection[4]?.linkedin || "",
       img: data.HeaderSection[5]?.img || {},
     });
+
+   
+  setProjectData(data.ProjectsSection.slice(1));
+  setProjectTitle(data.ProjectsSection[0]?.title || "Projects");
   }, []);
 
 
@@ -64,10 +70,13 @@ img:{},
 console.log(headerData);
   return (
     <GlobalContext.Provider value={{
-      darkMode, setDarkMode,
-      language, setLanguage,
-      headerData, setHeaderData,
-      profileData, setProfileData
+      darkMode,
+      setDarkMode,
+      language, 
+      headerData, 
+      profileData, 
+      projectData, 
+      projectTitle,
     }}>
       {children}
     </GlobalContext.Provider>

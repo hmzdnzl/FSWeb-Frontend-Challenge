@@ -89,7 +89,7 @@ export default function Header() {
                 <div id="github">
                   <div
                     className={`${
-                      darkMode ? "bg-[#252128]" : "bg-[#ffffff]"
+                      darkMode ? "bg-[#252128] border border-white" : "bg-[#ffffff]"
                     } w-[127px] h-[52px] gap-2 items-center rounded-[6px] p-2 flex`}
                   >
                     <FontAwesomeIcon
@@ -109,7 +109,7 @@ export default function Header() {
                 </div>
               </a>
             </button>
-            <button>
+            <button className={`${darkMode ? "border border-white rounded-[6px]" : ""}`}>
               <a href={headerData.linkedin}>
                 <div id="linkedin">
                   <div
@@ -119,7 +119,7 @@ export default function Header() {
                   >
                     <LinkedinIcon style={{ color: darkMode ? "#fff" : "#3730A3" }} 
                       className={`w-8 h-8 ${
-                        darkMode ? "fill-white" : "fill-[#3730A3]"
+                        darkMode ? "fill-white " : "fill-[#3730A3]"
                       }`}
                     />
                     <p
