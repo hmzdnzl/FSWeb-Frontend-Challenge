@@ -5,8 +5,7 @@ import { text } from "@fortawesome/fontawesome-svg-core";
 export const GlobalContext = createContext();
 
 export function GlobalProvider({ children }) {
-  const [darkMode, setDarkMode] = useState(false);
-  const [language, setLanguage] = useState("en");
+  const [darkMode, setDarkMode] = useState(false);  
   const [headerData, setHeaderData] = useState({
 name:"",
 title:"",
@@ -34,35 +33,73 @@ img:{},
   });
   const [projectData, setProjectData] = useState([]);
   const [projectTitle, setProjectTitle] = useState("");
+  const [footerData, setFooterData] = useState({
+    title:"",
+    text:"",
+    mailAddress:"",
+    connections:[]
+  });
+
+  const [language, setLanguage] = useState("en");
+
+   const [headerDataTr, setHeaderDataTr] = useState({
+name:"",
+title:"",
+text:"",
+github:"",
+linkedin:"",
+img:{},
+  });
+
+
+
+
+
+
+
+  
 
    useEffect(() => {
     setProfileData({
-      title: data.ProfileSection[0]?.title,
-      subtitle: data.ProfileSection[1]?.subtitle,
-      birthLabel: data.ProfileSection[2]?.birthLabel,
-      birth: data.ProfileSection[3]?.birth,
-      addressLabel: data.ProfileSection[4]?.addressLabel,
-      address: data.ProfileSection[5]?.address,
-      educationLabel: data.ProfileSection[6]?.educationLabel,
-      education: data.ProfileSection[7]?.education,
-      preferredRoleLabel: data.ProfileSection[8]?.preferredRoleLabel,
-      preferredRole: data.ProfileSection[9]?.preferredRole,
-      img: data.ProfileSection[10]?.img,
-      aboutme: data.ProfileSection[11]?.aboutme
+      title: data.en.ProfileSection[0]?.title,
+      subtitle: data.en.ProfileSection[1]?.subtitle,
+      birthLabel: data.en.ProfileSection[2]?.birthLabel,
+      birth: data.en.ProfileSection[3]?.birth,
+      addressLabel: data.en.ProfileSection[4]?.addressLabel,
+      address: data.en.ProfileSection[5]?.address,
+      educationLabel: data.en.ProfileSection[6]?.educationLabel,
+      education: data.en.ProfileSection[7]?.education,
+      preferredRoleLabel: data.en.ProfileSection[8]?.preferredRoleLabel,
+      preferredRole: data.en.ProfileSection[9]?.preferredRole,
+      img: data.en.ProfileSection[10]?.img,
+      aboutme: data.en.ProfileSection[11]?.aboutme
     });
 
     setHeaderData({
-      name: data.HeaderSection[0]?.name || "",
-      title: data.HeaderSection[1]?.title || "",
-      text: data.HeaderSection[2]?.text || "",
-      github: data.HeaderSection[3]?.github || "",
-      linkedin: data.HeaderSection[4]?.linkedin || "",
-      img: data.HeaderSection[5]?.img || {},
+      name: data.en.HeaderSection[0]?.name || "",
+      title: data.en.HeaderSection[1]?.title || "",
+      text: data.en.HeaderSection[2]?.text || "",
+      github: data.en.HeaderSection[3]?.github || "",
+      linkedin: data.en.HeaderSection[4]?.linkedin || "",
+      img: data.en.HeaderSection[5]?.img || {},
+    });
+    setHeaderDataTr({
+      name: data.tr.HeaderSection[0]?.name || "",
+      title: data.tr.HeaderSection[1]?.title || "",
+      text: data.tr.HeaderSection[2]?.text || "",
+      github: data.tr.HeaderSection[3]?.github || "",
+      linkedin: data.tr.HeaderSection[4]?.linkedin || "",
+      img: data.tr.HeaderSection[5]?.img || {},
     });
 
-   
-  setProjectData(data.ProjectsSection.slice(1));
-  setProjectTitle(data.ProjectsSection[0]?.title || "Projects");
+  setProjectData(data.en.ProjectsSection.slice(1));
+  setProjectTitle(data.en.ProjectsSection[0]?.title || "Projects");
+  setFooterData({
+    title: data.en.FooterSection.title || "",
+    text: data.en.FooterSection.text || "",
+    mailAddress: data.en.FooterSection.mailAddress || "",
+    connections: data.en.FooterSection.connections || [],
+  });
   }, []);
 
 
@@ -72,11 +109,13 @@ console.log(headerData);
     <GlobalContext.Provider value={{
       darkMode,
       setDarkMode,
-      language, 
-      headerData, 
+      headerData,
+      headerDataTr,
       profileData, 
       projectData, 
       projectTitle,
+      footerData,
+      language, setLanguage
     }}>
       {children}
     </GlobalContext.Provider>

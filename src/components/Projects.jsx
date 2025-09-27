@@ -3,7 +3,7 @@ import { GlobalContext } from "../context/GlobalContext";
 
 export default function Projects() {
   const { darkMode, projectData, projectTitle } = useContext(GlobalContext);
- 
+
   const projects = projectData || [];
   return (
     <div
@@ -20,46 +20,76 @@ export default function Projects() {
         {projectTitle}
       </h1>
       <section id="allprojects" className="gap-10 flex flex-col">
-       {projects.map((project) => (
-         <div
-           key={project.id}
-           className={` flex justify-between items-center ${darkMode ? "bg-[#2B2727]" : "bg-white"}`}
-         >
-           <div
-             id="image"
-             className="border-r border-[#D2D2D2] flex w-[360px] h-[360px]"
-           >
-             <img
-               className="w-full h-full object-cover rounded-tl-[12px] rounded-bl-[12px]"
-               src={project.projectimg}
-               alt={project.title}
-             />
-           </div>
-           <section>
-             <div
-               id="info"
-               className=" flex flex-col gap-y-4 pl-8 w-[584px] h-[247px]"
-             >
-               <h2 className={`h-[32px] text-[32px] flex items-center ${darkMode ? "text-[#C1BAED]" : "text-[#4731D3]"}`}>
-                 {project.subtitle}
-               </h2>
-               <p className={`${darkMode ? "text-[#FFFFFF]" : "text-[#4731D3]"}`}>{project.projectDetails?.description}</p>
-               <div className="flex gap-2 ">
-                 {project.projectDetails?.technologies?.map((tech) => (
-                   <span
-                     className={`${darkMode ? "flex bg-[#8173DA] w-[68px] h-[31px]  rounded-[23px] text-white" : "flex bg-[#4731D3] w-[68px] h-[31px]  rounded-[23px] text-white"}`}
-                     key={tech.id}
-                   >
-                     <p className="border border-[#4731D3] rounded-[23px] w-[70px] h-[31px] flex  justify-center">
-                       {tech.name}
-                     </p>
-                   </span>
-                 ))}
-               </div>
-             </div>
-           </section>
-         </div>
-       ))}
+        {projects.map((project) => (
+          <div
+            key={project.id}
+            className={` flex justify-between items-center ${
+              darkMode ? "bg-[#2B2727]" : "bg-white"
+            }`}
+          >
+            <div
+              id="image"
+              className="border-r border-[#D2D2D2] flex w-[360px] h-[360px]"
+            >
+              <img
+                className="w-full h-full object-cover rounded-tl-[12px] rounded-bl-[12px]"
+                src={project.projectimg}
+                alt={project.title}
+              />
+            </div>
+            <section>
+              <div
+                id="info"
+                className=" flex flex-col gap-y-4 pl-8 w-[584px] h-[247px]"
+              >
+                <h2
+                  className={`h-[32px] text-[32px] flex items-center ${
+                    darkMode ? "text-[#C1BAED]" : "text-[#4731D3]"
+                  }`}
+                >
+                  {project.subtitle}
+                </h2>
+                <p
+                  className={`${
+                    darkMode ? "text-[#FFFFFF]" : "text-[#383838]"
+                  }`}
+                >
+                  {project.projectDetails?.description}
+                </p>
+                <div className="flex gap-2 ">
+                  {project.projectDetails?.technologies?.map((tech) => (
+                    <span
+                      className={`${
+                        darkMode
+                          ? "flex bg-[#8173DA] w-[68px] h-[31px]  rounded-[23px] text-white"
+                          : "flex bg-[#4731D3] w-[68px] h-[31px]  rounded-[23px] text-white"
+                      }`}
+                      key={tech.id}
+                    >
+                      <p className="border border-[#4731D3] rounded-[23px] w-[70px] h-[31px] flex  justify-center">
+                        {tech.name}
+                      </p>
+                    </span>
+                  ))}
+                </div>
+                <nav className="font-inter font-medium text-[16px] flex gap-11 underline">
+                  <a
+                    href={project.projectDetails?.viewSiteLink}
+                    className={`${darkMode ? "text-[#CBF281]" : "text-[#120B39]"} `}
+                  >
+                    View Site
+                  </a>
+                  <a
+                    href={project.projectDetails?.githubLink}
+                    className={`${darkMode ? "text-[#CBF281]" : "text-[#120B39]"} `}
+                  >
+                    GitHub
+                  </a>
+                </nav>
+              </div>
+            </section>
+          </div>
+        ))}
       </section>
     </div>
   );

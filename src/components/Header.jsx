@@ -6,11 +6,17 @@ import heroimg from "../assets/hero-right.png";
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 export default function Header() {
-  const { headerData, darkMode, setDarkMode } = useContext(GlobalContext);
+  const { headerData, headerDataTr, darkMode, setDarkMode, language, setLanguage } =
+    useContext(GlobalContext);
 
   function handleDarkModeChange(event) {
     setDarkMode(event.target.checked);
     console.log(event.target.checked);
+  }
+
+  function handleLanguageChange() {
+    setLanguage(language === "en" ? "tr" : "en");
+    console.log(language);
   }
 
   return (
@@ -35,15 +41,40 @@ export default function Header() {
         </p>
 
         <section id="langDark">
-          <a id="language" href="#" className="no-underline">
+          <a
+            id="language"
+            href="#"
+            onClick={handleLanguageChange}
+            className="no-underline"
+          >
             <span
               className={`${
-                darkMode ? "text-[#D9D9D9]" : " text-[#CBF281]"
+                darkMode==true && language === "en" ? "text-[rgb(186,178,231)]" : ""
+              } 
+              ${darkMode==false && language === "en"? "text-[#CBF281]": ""}
+              ${
+              darkMode==true && language === "tr"
+                  ? "text-[#777777] ml-[-25px] mr-2"
+                  : "text-[#777777] ml-[-25px] mr-2"
               } text-[15px]`}
             >
-              TÜRKÇE
+              {language === "en" ? "TÜRKÇE" : "SWITCH TO"}
             </span>
-            <span className="text-[15px] text-[#D9D9D9]">’YE GEÇ</span>
+            <span
+              className={`${
+                darkMode==true && language ==="tr"? "text-[rgb(186,178,231)]" : ""
+              } ${
+               darkMode==false && language === "tr" ? "text-[#CBF281]" : ""
+              } 
+              ${
+                darkMode==true && language === "en"
+                  ? "text-[#777777] "
+                  : "text-[#777777] "
+              }
+              text-[15px] `}
+            >
+              {language === "en" ? "'YE GEÇ" : "ENGLISH"}
+            </span>
           </a>
           <label className="pl relative inline-flex items-center cursor-pointer">
             <input
@@ -80,16 +111,20 @@ export default function Header() {
               darkMode ? "text-[#CBF281]" : "text-[#CBF281]"
             } font-bold text-[54px] leading-[110%]`}
           >
-            {headerData.title}
+            {language === "en" ? headerData.title : headerDataTr.title}
           </h1>
-          <p className="text-white text-[24px] ">{headerData.text}</p>
+          <p className="text-white text-[24px] ">
+            {language === "en" ? headerData.text : headerDataTr.text}
+          </p>
           <div id="logolar">
             <button>
               <a href={headerData.github}>
                 <div id="github">
                   <div
                     className={`${
-                      darkMode ? "bg-[#252128] border border-white" : "bg-[#ffffff]"
+                      darkMode
+                        ? "bg-[#252128] border border-white"
+                        : "bg-[#ffffff]"
                     } w-[127px] h-[52px] gap-2 items-center rounded-[6px] p-2 flex`}
                   >
                     <FontAwesomeIcon
@@ -109,7 +144,11 @@ export default function Header() {
                 </div>
               </a>
             </button>
-            <button className={`${darkMode ? "border border-white rounded-[6px]" : ""}`}>
+            <button
+              className={`${
+                darkMode ? "border border-white rounded-[6px]" : ""
+              }`}
+            >
               <a href={headerData.linkedin}>
                 <div id="linkedin">
                   <div
@@ -117,7 +156,8 @@ export default function Header() {
                       darkMode ? "bg-[#252128]" : "bg-[#ffffff]"
                     }  w-[127px] h-[52px] gap-2 items-center rounded-[6px] p-2 flex`}
                   >
-                    <LinkedinIcon style={{ color: darkMode ? "#fff" : "#3730A3" }} 
+                    <LinkedinIcon
+                      style={{ color: darkMode ? "#fff" : "#3730A3" }}
                       className={`w-8 h-8 ${
                         darkMode ? "fill-white " : "fill-[#3730A3]"
                       }`}
