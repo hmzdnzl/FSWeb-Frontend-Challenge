@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
+import './Profile.css';
 
 export default function Profile() {
   const { darkMode, profileData, language, profileDataTr } = useContext(GlobalContext);
@@ -20,7 +21,7 @@ export default function Profile() {
         </h1>
         <section className="w-[960px] h-[291px] gap-8 flex  ">
           <div className="w-[300px] h-[291px] flex flex-col gap-y-11 items-start">
-            <h2
+            <h2 id="profilesubtitle"
               className={`${
                 darkMode ? "text-[#CBF281]" : "text-[#ffffff]"
               } text-[30px] font-medium font-inter  `}

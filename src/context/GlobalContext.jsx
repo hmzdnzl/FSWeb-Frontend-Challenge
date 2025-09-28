@@ -5,7 +5,7 @@ import { data } from "../data";
 
 export const GlobalContext = createContext();
 export function GlobalProvider({ children }) {
-  const [darkMode, setDarkMode] = useState(false);
+  const [darkMode, setDarkMode] = useState(localStorage.getItem("darkMode") ? JSON.parse(localStorage.getItem("darkMode")) : false);
   const [headerData, setHeaderData] = useState({
     name: "",
     title: "",
@@ -36,7 +36,7 @@ export function GlobalProvider({ children }) {
     mailAddress: "",
     connections: [],
   });
-  const [language, setLanguage] = useState("en");
+  const [language, setLanguage] = useState(localStorage.getItem("language") ? JSON.parse(localStorage.getItem("language")) : "en");
   const [headerDataTr, setHeaderDataTr] = useState({
     name: "",
     title: "",
@@ -131,6 +131,9 @@ export function GlobalProvider({ children }) {
       connections: data.tr.FooterSection.connections || [],
     });
   }, []);
+
+  localStorage.setItem("darkMode", JSON.stringify(darkMode));
+  localStorage.setItem("language", JSON.stringify(language));
 
   return (
     <GlobalContext.Provider
