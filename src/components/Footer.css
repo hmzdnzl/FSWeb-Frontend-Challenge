@@ -1,9 +1,12 @@
 @media (max-width: 980px) {
+    
     #footer-title {
         overflow-y: hidden;
+        height: 100px;
     }
     #mailaddress {
      overflow-y: hidden;
+     height: 40px;
     }
     #social-icon {
      
@@ -13,6 +16,12 @@
     #social-icons {
      
      overflow-y: hidden;
-     height: 50px;
+     height: 60px;
+    }
+    #footer-description {
+     overflow-y: hidden;
+    width: 45vw;
+    font-size: 22px;
+     
     }
 }
