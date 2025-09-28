@@ -1,4 +1,74 @@
-@media (max-width: 1024px) {
+@media (max-width: 980px) {
+   * {
+     overflow-x: hidden;
+   
+   }
+   #header {
+     width: 100vw;
+     display: flex;
+     flex-direction: column;
+        align-items: center;
+        padding-left: 30px;
+        
+            
+   }
+   #ust{
+     width: 80vw;
+   }
+
+   #langDark{
+     width: 45vw;
+     
+   }
+   #language{
+     width:200px;
+    
+     display: flex;
+     
+     justify-content: center;
+   }
+   #orta{
+     width: 100vw;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     overflow-y: hidden;
+   }
+
+   #baslikyazılogolar{
+     width: 100vw;
+     height: auto;
+     display: flex;
+     justify-content: center;
+     z-index: 10;
+     margin-right: -250px;
+   }
+   #yazi{
+     width: 50vw;
+     height: auto;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     
+     z-index: 10;
+   }
+   #resim{
+     z-index: 0;
+     overflow-y: hidden;
+     width: 75vw;
+     margin-left: auto;
+     margin-right: 50px;
+   }
+   #logolar{
+     width: 370px;
+     
+   }
+
+
+}
+
+@media (max-width: 1204px) {
    body {
      overflow-x: hidden;
    }

@@ -138,14 +138,14 @@ export default function Header() {
       </div>
   <div id="orta" className="w-[66%] h-[376px] relative z-[10] m-[0_17%] flex items-end justify-between box-border">
   <section className="w-[55%] flex flex-col gap-7" id="baslikyazılogolar">
-          <h1
+          <h1 id="baslik"
             className={`${
               darkMode ? "text-[#CBF281]" : "text-[#CBF281]"
             } font-bold text-[54px] leading-[110%]`}
           >
             {language === "en" ? headerData.title : headerDataTr.title}
           </h1>
-          <p className="text-white text-[24px] ">
+          <p id="yazi" className="text-white text-[24px] ">
             {language === "en" ? headerData.text : headerDataTr.text}
           </p>
           <div id="logolar" className="flex gap-[20px]">
@@ -197,7 +197,7 @@ export default function Header() {
                     <p
                       className={`${
                         darkMode ? "text-[#ffffff]" : "text-[#3730A3]"
-                      } text-[18px] w-[58px] h-[29px]`}
+                      } text-[18px] w-[80px] h-[29px] pl-1`}
                     >
                       Linkedin
                     </p>

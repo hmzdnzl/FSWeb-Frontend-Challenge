@@ -1,0 +1,24 @@
+@media (max-width: 980px) {
+	#projects {
+		height: auto;
+		min-height: 50vh;
+		overflow-y: visible;
+		width: 100vw;
+        
+	}
+    #projecttitle {
+        overflow-y: hidden;
+    }
+    #subtitle {
+        
+        height: auto;
+        width: auto;
+        overflow-y: hidden;
+    }
+    #description {
+        height: auto;
+        width: 55vw;
+        overflow-y: hidden;
+        font-size: 13px;
+    }
+}

@@ -1,5 +1,6 @@
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
+import './Projects.css';
 
 export default function Projects() {
   const { darkMode, projectData, projectTitle, projectDataTr, projectTitleTr, language } = useContext(GlobalContext);
@@ -12,7 +13,7 @@ export default function Projects() {
         darkMode ? "bg-[#1A210B]" : "bg-[#CBF281]"
       } `}
     >
-      <h1
+      <h1 id="projecttitle"
         className={`text-[48px]  font-bold flex items-center font-inter w-[960px] h-[100px] mb-[40px] pt-[60px] ${
           darkMode ? "text-[#CBF281]" : "text-[#4731D3]"
         }`}
@@ -42,14 +43,14 @@ export default function Projects() {
                 id="info"
                 className=" flex flex-col gap-y-4 pl-8 w-[584px] h-[247px]"
               >
-                <h2
+                <h2 id="subtitle"
                   className={`h-[32px] text-[32px] flex items-center ${
                     darkMode ? "text-[#C1BAED]" : "text-[#4731D3]"
                   }`}
                 >
                   {project.subtitle}
                 </h2>
-                <p
+                <p id="description"
                   className={`${
                     darkMode ? "text-[#FFFFFF]" : "text-[#383838]"
                   }`}
