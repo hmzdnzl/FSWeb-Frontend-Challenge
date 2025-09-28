@@ -2,7 +2,7 @@ import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 
 export default function Profile() {
-  const { darkMode, profileData } = useContext(GlobalContext);
+  const { darkMode, profileData, language, profileDataTr } = useContext(GlobalContext);
   return (
     <div
       id="profile"
@@ -25,20 +25,20 @@ export default function Profile() {
                 darkMode ? "text-[#CBF281]" : "text-[#ffffff]"
               } text-[30px] font-medium font-inter  `}
             >
-              {profileData.subtitle}
+              {language === "en" ? profileData.subtitle : profileDataTr.subtitle}
             </h2>
             <section className="flex items-end justify-between w-[300px] h-[222px] ">
-              <div className=" text-[#CBF281] text-[16px] flex flex-col gap-y-5 font-inter font-semibold w-[101px] h-[202px]">
-                <p>{profileData.birthLabel}</p>
-                <p>{profileData.addressLabel}</p>
-                <p>{profileData.educationLabel}</p>
-                <p>{profileData.preferredRoleLabel}</p>
+              <div className={`text-[#CBF281] text-[16px] flex flex-col ${language === "en" ? "gap-y-5" : "gap-y-5"} font-inter font-semibold w-[105px] h-[202px]`}>
+                <p>{language === "en" ? profileData.birthLabel : profileDataTr.birthLabel}</p>
+                <p>{language === "en" ? profileData.addressLabel : profileDataTr.addressLabel}</p>
+                <p>{language === "en" ? profileData.educationLabel : profileDataTr.educationLabel}</p>
+                <p>{language === "en" ? profileData.preferredRoleLabel : profileDataTr.preferredRoleLabel}</p>
               </div>
-              <div className=" w-[189px] h-[202px] font-inter text-[16px] text-[#FFFFFF] flex flex-col gap-y-5 font-semibold">
-                <p>{profileData.birth}</p>
-                <p>{profileData.address}</p>
-                <p>{profileData.education}</p>
-                <p>{profileData.preferredRole}</p>
+              <div className={` w-[189px] h-[202px] font-inter text-[16px] text-[#FFFFFF] flex flex-col ${language === "en" ? "gap-y-5" : "gap-y-5"} font-semibold`}>
+                <p>{language === "en" ? profileData.birth : profileDataTr.birth}</p>
+                <p>{language === "en" ? profileData.address : profileDataTr.address}</p>
+                <p>{language === "en" ? profileData.education : profileDataTr.education}</p>
+                <p>{language === "en" ? profileData.preferredRole : profileDataTr.preferredRole}</p>
               </div>
             </section>
           </div>
@@ -50,9 +50,9 @@ export default function Profile() {
             />
           </div>
           <div className="w-[300px] h-[291px] ">
-            <h2 className="text-[30px] text-inter text-white">{profileData.aboutme[0].title} </h2>
-            <p className="text-[18px] text-inter my-3.5 text-white">{profileData.aboutme[1].text1} </p>
-            <p className="text-[18px] text-inter text-white">{profileData.aboutme[1].text2} </p>
+            <h2 className="text-[30px] text-inter text-white">{language === "en" ? profileData.aboutme[0].title : profileDataTr.aboutme[0].title} </h2>
+            <p className="text-[18px] text-inter my-3.5 text-white">{language === "en" ? profileData.aboutme[1].text1 : profileDataTr.aboutme[1].text1} </p>
+            <p className="text-[18px] text-inter text-white">{language === "en" ? profileData.aboutme[1].text2 : profileDataTr.aboutme[1].text2} </p>
           </div>
         </section>
       </div>

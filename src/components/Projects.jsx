@@ -2,9 +2,9 @@ import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 
 export default function Projects() {
-  const { darkMode, projectData, projectTitle } = useContext(GlobalContext);
+  const { darkMode, projectData, projectTitle, projectDataTr, projectTitleTr, language } = useContext(GlobalContext);
 
-  const projects = projectData || [];
+  const projects = language === "en" ? projectData : projectDataTr || [];
   return (
     <div
       id="projects"
@@ -17,7 +17,7 @@ export default function Projects() {
           darkMode ? "text-[#CBF281]" : "text-[#4731D3]"
         }`}
       >
-        {projectTitle}
+        {language === "en" ? projectTitle : projectTitleTr}
       </h1>
       <section id="allprojects" className="gap-10 flex flex-col">
         {projects.map((project) => (
@@ -77,7 +77,7 @@ export default function Projects() {
                     href={project.projectDetails?.viewSiteLink}
                     className={`${darkMode ? "text-[#CBF281]" : "text-[#120B39]"} `}
                   >
-                    View Site
+                    {language === "en" ? "View Site" : "Siteyi Görüntüle"}
                   </a>
                   <a
                     href={project.projectDetails?.githubLink}

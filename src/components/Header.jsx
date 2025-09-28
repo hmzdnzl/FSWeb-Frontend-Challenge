@@ -1,12 +1,17 @@
-import "../App.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import LinkedinIcon from "../assets/linkedin-logo.svg?react";
 import heroimg from "../assets/hero-right.png";
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
+import { toast } from 'react-toastify';
+import axios from "axios";
+import './Header.css';
+
+
+
 export default function Header() {
-  const { headerData, headerDataTr, darkMode, setDarkMode, language, setLanguage } =
+  const { headerData, headerDataTr, darkMode, setDarkMode, language, setLanguage, footerData } =
     useContext(GlobalContext);
 
   function handleDarkModeChange(event) {
@@ -14,24 +19,51 @@ export default function Header() {
     console.log(event.target.checked);
   }
 
+  
+
   function handleLanguageChange() {
     setLanguage(language === "en" ? "tr" : "en");
+    if(language==="tr"){
+    toast.info("Türkçe'ye geçildi", {
+      autoClose: 500,    
+    });
+  }else{
+    toast.info("Switched to English", {
+      autoClose: 500,
+    });
+  }
+  axios.post("https://reqres.in/api/workintech", {
+      name: headerData.name,
+      email: footerData.mailAddress
+    }, {
+  headers: {
+    "x-api-key": "reqres-free-v1"
+  }})
+    .then(response => {
+      console.log(response.data);
+    })
+    .catch(error => {
+      console.error(error);
+    });
+
     console.log(language);
   }
 
+  
+
   return (
-    <div id="header">
-      <div id="arkaplan">
+  <div id="header" className="relative font-inter pt-[10px] h-[671px] w-[1440px]">
+  <div id="arkaplan" className="absolute top-0 left-0 w-full h-full flex z-[1]">
         <section
           id="left"
-          className={`${darkMode ? "bg-[#171043]" : "bg-[#4731D3]"}`}
+          className={`${darkMode ? "bg-[#171043]" : "bg-[#4731D3]"} w-[70%] h-full`}
         ></section>
         <section
           id="right"
-          className={`${darkMode ? "bg-[#211F0B]" : "bg-[#CBF281]"}`}
+          className={`${darkMode ? "bg-[#211F0B]" : "bg-[#CBF281]"} w-[30%] h-full`}
         ></section>
       </div>
-      <div id="ust">
+  <div id="ust" className="relative w-[66%] h-[72px] flex items-center justify-between m-[2.5rem_auto] z-[10]">
         <p
           className={`${
             darkMode ? " text-[#CBF281]" : " text-[#CBF281]"
@@ -40,7 +72,7 @@ export default function Header() {
           {headerData.name}
         </p>
 
-        <section id="langDark">
+  <section id="langDark" className="flex h-[72px] w-[35%] justify-between items-start">
           <a
             id="language"
             href="#"
@@ -104,8 +136,8 @@ export default function Header() {
           </label>
         </section>
       </div>
-      <div id="orta">
-        <section className="w-[55%] flex flex-col gap-7" id="baslikyazılogolar">
+  <div id="orta" className="w-[66%] h-[376px] relative z-[10] m-[0_17%] flex items-end justify-between box-border">
+  <section className="w-[55%] flex flex-col gap-7" id="baslikyazılogolar">
           <h1
             className={`${
               darkMode ? "text-[#CBF281]" : "text-[#CBF281]"
@@ -116,7 +148,7 @@ export default function Header() {
           <p className="text-white text-[24px] ">
             {language === "en" ? headerData.text : headerDataTr.text}
           </p>
-          <div id="logolar">
+          <div id="logolar" className="flex gap-[20px]">
             <button>
               <a href={headerData.github}>
                 <div id="github">
@@ -173,11 +205,12 @@ export default function Header() {
                 </div>
               </a>
             </button>
+        
           </div>
         </section>
 
         <section id="resim">
-          <img src={heroimg} width={350} height={375} className="" />
+          <img src={heroimg} width={350} height={375} className="w-full h-full object-contain z-[5] mb-[-93px] ml-[80px]" />
         </section>
       </div>
     </div>
