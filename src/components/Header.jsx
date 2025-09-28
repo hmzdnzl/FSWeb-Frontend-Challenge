@@ -127,8 +127,8 @@ export default function Header() {
             <span
               className={`${
                 darkMode
-                  ? "ms-3 mr-[-24px] pr-7 font-medium text-gray-900 dark:text-[#ffffff]"
-                  : "ms-3 mr-[5px] pr-7 font-medium text-gray-900 dark:text-[#4731D3]"
+                  ? "ms-3 mr-[-24px] pr-7 font-medium text-[#ffffff]"
+                  : "ms-3 mr-[5px] pr-7 font-medium text-gray-900 "
               }`}
             >
               {darkMode ? "Light Mode" : "Dark Mode"}
