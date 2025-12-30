@@ -2,11 +2,14 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 import LinkedinIcon from "../assets/linkedin-logo.svg?react";
 import heroimg from "../assets/hero-right.png";
+import githubfoto from "../assets/profile/githubfoto.png";
+import profilfoto from "../assets/profile/profilFoto.png";
 import { useContext } from "react";
 import { GlobalContext } from "../context/GlobalContext";
 import { toast } from 'react-toastify';
 import axios from "axios";
 import './Header.css';
+
 
 
 
@@ -117,7 +120,7 @@ export default function Header() {
               className="sr-only peer"
             />
             <div
-              className="w-11 h-6 bg-gray-200 rounded-full peer peer-focus:ring-4
+              className="w-11 h-6 absolute left-[-40px] bg-gray-200 rounded-full peer 
              dark:bg-white peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full
                after:content-[''] after:absolute after:top-[2px] 
               after:start-[1px] after:bg-[#FFE86E] 
@@ -210,7 +213,7 @@ export default function Header() {
         </section>
 
         <section id="resim">
-          <img src={heroimg} width={350} height={375} className="w-full h-full object-contain z-[5] mb-[-93px] ml-[80px]" />
+          <img src={githubfoto} className="w-[350px] h-[350px] rounded-[16px] z-[5] mb-[-23px] ml-[80px]" />
         </section>
       </div>
     </div>

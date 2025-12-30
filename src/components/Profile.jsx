@@ -44,13 +44,14 @@ export default function Profile() {
             </section>
           </div>
 
-          <div className="w-[300px] h-[291px] ">
-            <img className="w-full h-full object-cover rounded-[10px]"
+          <div className="w-[300px] h-[287px] rounded-[16px] overflow-hidden">
+           { <img
+              className="block w-full h-full object-cover"
               src={profileData.img}
               alt="profile"
-            />
+            />}
           </div>
-          <div className="w-[300px] h-[291px] ">
+          <div className=" w-[300px] h-[291px] mt-[-80px] ">
             <h2 className="text-[30px] text-inter text-white">{language === "en" ? profileData.aboutme[0].title : profileDataTr.aboutme[0].title} </h2>
             <p className="text-[18px] text-inter my-3.5 text-white">{language === "en" ? profileData.aboutme[1].text1 : profileDataTr.aboutme[1].text1} </p>
             <p className="text-[18px] text-inter text-white">{language === "en" ? profileData.aboutme[1].text2 : profileDataTr.aboutme[1].text2} </p>
@@ -60,8 +61,4 @@ export default function Profile() {
     </div>
   );
 }
-{
-  /* 
-    
-    */
-}
+

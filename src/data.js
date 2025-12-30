@@ -9,6 +9,8 @@ import vscode from "./assets/skills/vscode-logo.png";
 import profileimg from "./assets/profile/profile-img.png";
 import pizzaproje from "./assets/projects/pizzaprojess.png";
 import filmproje from "./assets/projects/filmprojess.png";
+import ecommerceproje from "./assets/projects/ecommerceproje.png";
+import twitterapiproject from "./assets/projects/twitterapiproject.png";
 import atsignlogo from "./assets/footer/at-sign-logo.png";
 import codepenlogo from "./assets/footer/codepen-logo.png";
 import instagramlogo from "./assets/footer/instagram-logo.png";
@@ -17,18 +19,20 @@ import atsignlogodark from "./assets/footer/at-sign-dark.png";
 import codepenlogodark from "./assets/footer/codepen-dark.png";
 import instagramlogodark from "./assets/footer/instagram-dark.png";
 import twitterlogodark from "./assets/footer/twitter-dark.png";
+import profilfoto from "./assets/profile/profilFoto.png";
+import githubfoto from "./assets/profile/githubfoto.png";
 
 export const data = {
   en: {
     HeaderSection: [
       { name: "Hamza" },
-      { title: "From a Frontend Developer..." },
+      { title: "From a Fullstack Developer..." },
       {
-        text: "If you want solid and scalable frontend projects crafted, you are at the right website.",
+        text: "Solid, scalable full-stack applications with strong backend foundations.",
       },
       { github: "https://github.com/hmzdnzl" },
       { linkedin: "https://www.linkedin.com/in/hmzdnzl/" },
-      { img: heroimg },
+      { img: githubfoto },
     ],
     SkillsSection: [
       { title: "Skills" },
@@ -49,15 +53,15 @@ export const data = {
       { educationLabel: "Education Status" },
       { education: "Erciyes Ünv. Çevre Müh. Lisans, 2022" },
       { preferredRoleLabel: "Preferred Role" },
-      { preferredRole: "Frontend, UI" },
-      { img: profileimg },
+      { preferredRole: "Full-Stack, Backend" },
+      { img: profilfoto },
       {
         aboutme: [
           { title: "About Me" },
           {
             text1: `I graduated in 2022 and completed my military service. Then I worked as an environmental engineer for two and a half years.`,
             text2:
-              "After resigning, I joined a six-month fullstack developer course. I’m now halfway through, done with frontend and starting backend soon.",
+              "After resigning from my previous role, I repositioned my career toward software development. As part of an intensive full-stack training program lasting approximately six months, I worked primarily on React- and Java-based applications, gaining hands-on experience in both frontend and backend development through project-driven work.",
           },
         ],
       },
@@ -65,8 +69,40 @@ export const data = {
 
     ProjectsSection: [
       { id: 0, title: "Projects" },
-      {
+        {
         id: 1,
+        subtitle: "E-Commerce website",
+        projectimg: ecommerceproje,
+        projectDetails: {
+          description: `This website is about an e-commerce platform. On this website, you can select products, add them to your cart, and proceed to checkout. The platform supports various payment methods and provides order tracking. In addition, I’ve listed the technologies I used in this project.`,
+          technologies: [
+            { id: 1, name: "react" },
+            { id: 2, name: "redux" },
+            { id: 3, name: "vercel" },
+          ],
+          viewSiteLink: "https://e-commerce-project-sigma-khaki.vercel.app/",
+          githubLink: "https://github.com/hmzdnzl/E-commerce-project",
+        },
+      },
+      {
+        id: 2,
+        subtitle: "Twitter API",
+        projectimg: twitterapiproject,
+        projectDetails: {
+          description: `This project involves integrating with the Twitter API to fetch and display tweets based on specific criteria. The application allows users create tweets, comment tweets, like tweets retweet tweets, editing fundamental twitter functions and search for tweets, view user profiles, and then analyze tweet data. It demonstrates the use of RESTful API principles and handles authentication with token-based authentication. `,
+          technologies: [
+            { id: 1, name: "java" },
+            { id: 2, name: "springboot" },
+            { id: 3, name: "postgresql" },
+          ],
+          viewSiteLink:
+            "This project is developed locally and does not have a live site. Codes are available on GitHub. If you want to see how it works, please contact me.",
+          githubLink:
+            "https://github.com/hmzdnzl/FSWEB-s19-Challenge",
+        },
+      },            
+       {
+        id: 3,
         subtitle: "Teknolojik Yemekler",
         projectimg: pizzaproje,
         projectDetails: {
@@ -81,7 +117,7 @@ export const data = {
         },
       },
       {
-        id: 2,
+        id: 4,
         subtitle: "Redux Watchlist Solution",
         projectimg: filmproje,
         projectDetails: {
@@ -97,6 +133,7 @@ export const data = {
             "https://github.com/hmzdnzl/fsweb-s10g3-redux-watchlist-solution",
         },
       },
+      
     ],
     FooterSection: {
       title: "Send me a message!",
@@ -133,13 +170,13 @@ export const data = {
   tr: {
     HeaderSection: [
       { name: "Hamza" },
-      { title: "Bir Frontend Developerdan..." },
+      { title: "Bir Full-Stack Developerdan..." },
       {
-        text: "Sağlam ve ölçeklendirilebilir frontend projeleri üretmesini istiyorsanız, doğru websitesindesiniz.",
+        text: "Güçlü backend temelleri üzerine inşa edilmiş, sağlam ve ölçeklenebilir full-stack uygulamalar.",
       },
       { github: "https://github.com/hmzdnzl" },
       { linkedin: "https://www.linkedin.com/in/hmzdnzl/" },
-      { img: heroimg },
+      {  img: githubfoto },
     ],
     SkillsSection: [
       { title: "Yetenekler" },
@@ -160,15 +197,15 @@ export const data = {
       { educationLabel: "Eğitim Durumu" },
       { education: "Erciyes Ünv. Çevre Müh. Lisans, 2022" },
       { preferredRoleLabel: "Tercih Edilen Rol" },
-      { preferredRole: "Frontend, UI" },
-      { img: profileimg },
+      { preferredRole: "Full-Stack, Backend" },
+      { img: profilfoto },
       {
         aboutme: [
           { title: "Hakkımda" },
           {
             text1: `2022’de mezun oldum ve askerlik hizmetimi tamamladım. Ardından iki buçuk yıl çevre mühendisi olarak çalıştım.`,
             text2:
-              "İstifa ettikten sonra altı aylık bir fullstack developer kursuna katıldım. Şu anda kursun yarısındayım; frontend kısmını bitirdim ve yakında backend’e başlayacağım.",
+              "İstifa ettikten sonra yazılım geliştirme alanında kendimi yeniden konumlandırdım. Yaklaşık altı ay süren yoğun bir full-stack eğitim programı kapsamında, özellikle React ve Java tabanlı uygulamalar üzerinde çalıştım; proje odaklı ilerleyerek hem frontend hem de backend geliştirme konularında deneyim edindim.",
           },
         ],
       },
@@ -178,6 +215,38 @@ export const data = {
       { id: 0, title: "Projeler" },
       {
         id: 1,
+        subtitle: "E-Ticaret Sitesi",
+        projectimg: ecommerceproje,
+        projectDetails: {
+          description: `Bu web sitesi bir e-ticaret platformudur. Sitede ürünleri seçebilir, sepetinize ekleyebilir ve ödeme adımına geçebilirsiniz. Platform farklı ödeme yöntemlerini destekler ve sipariş takibi sağlar. Ayrıca bu projede kullandığım teknolojileri de listeledim.`,
+          technologies: [
+            { id: 1, name: "react" },
+            { id: 2, name: "redux" },
+            { id: 3, name: "vercel" },
+          ],
+          viewSiteLink: "https://e-commerce-project-sigma-khaki.vercel.app/",
+          githubLink: "https://github.com/hmzdnzl/E-commerce-project",
+        },
+      },
+      {
+        id: 2,
+        subtitle: "Twitter API",
+        projectimg: twitterapiproject,
+        projectDetails: {
+          description: `Bu proje, Twitter API ile entegre olarak belirli kriterlere göre tweetleri çekip görüntülemeye olanak tanır. Uygulama ile kullanıcılar tweet oluşturabilir, tweetlere yorum yapabilir, beğenebilir, retweet edebilir, temel Twitter fonksiyonlarını düzenleyebilir, tweet arayabilir, kullanıcı profillerini görüntüleyebilir ve tweet verilerini analiz edebilir. RESTful API prensipleriyle geliştirilmiş olup, token tabanlı kimlik doğrulama kullanır.`,
+          technologies: [
+            { id: 1, name: "java" },
+            { id: 2, name: "springboot" },
+            { id: 3, name: "postgresql" },
+          ],
+          viewSiteLink:
+            "Bu proje localhostta geliştirilmiştir ve yayınlanmış bir sitesi yoktur. Kodlar GitHub'da mevcuttur. Sistemin nasıl çalıştığını görmek isterseniz benimle iletişime geçebilirsiniz.",
+          githubLink:
+            "https://github.com/hmzdnzl/FSWEB-s19-Challenge",
+        },
+      },
+      {
+        id: 3,
         subtitle: "Technological Foods",
         projectimg: pizzaproje,
         projectDetails: {
@@ -192,7 +261,7 @@ export const data = {
         },
       },
       {
-        id: 2,
+        id: 4,
         subtitle: "Redux İzleme Listesi Çözümü",
         projectimg: filmproje,
         projectDetails: {
