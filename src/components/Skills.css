@@ -1,0 +1,79 @@
+@media (max-width: 393px) {
+	#Skills {
+		height: auto;
+		min-height: 50vh;
+		overflow-y: visible;
+		width: 100vw;        
+	}
+    #main{        
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: auto;
+    }
+    #skillsbaslik {       
+        font-size: 32px;
+        width: 200px;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;        
+        margin-bottom: 20px;
+    }
+
+    #skillsbaslik {
+        display: flex;
+        height: 120px;
+        width: 100vw;
+        
+    }
+    
+    #skillname{
+        font-size: 18px;
+    }
+
+    #skillimg{
+        height: 60px;
+        width: 60px;
+        
+    }
+
+    #imgname{
+        height: 70px;        
+        gap: 5px;
+        display: flex;
+        padding-left: 100px;
+    }
+
+    #blok1{
+        display: flex;
+        flex-direction:column;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+        margin-top: -100px;
+        margin-bottom: -150px;
+    }
+        #blok2{
+            display: flex;
+            flex-direction:column;
+            margin: 0 auto;
+            align-items: center;
+            justify-content: center;
+        }
+    
+        #blok1, #blok2 {
+            width: 90vw;
+            height: 450px;
+        }
+    #blok2{
+        display: flex;
+        flex-direction:column;
+        margin: 0 auto;
+        align-items: center;
+        justify-content: center;
+    }
+
+
+}

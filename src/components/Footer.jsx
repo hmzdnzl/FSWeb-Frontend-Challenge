@@ -9,13 +9,13 @@ export default function Footer() {
   return (
     <div
       id="footer"
-      className={`w-[1440px] h-[454px] flex justify-center items-center  ${
+      className={`w-[1440px] md:h-[454px] h-auto pt-10 md:pt-0 flex justify-center items-center  ${
         darkMode ? "bg-[#252128]" : "bg-[#F9F9F9]"
       } `}
     >
       <div
         id="body"
-        className="w-[483px] h-[290px] font-inter flex flex-col items-center gap-y-4"
+        className="w-[483px] md:h-[290px] h-auto font-inter flex flex-col items-center gap-y-4"
       >
         <h1 id="footer-title" className={`text-[48px] font-bold ${darkMode ? "text-[#8F88FF]" : "text-[#4731D3]"}`}>
           {language === "en" ? footerData.title : footerDataTr.title}

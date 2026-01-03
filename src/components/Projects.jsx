@@ -14,12 +14,12 @@ export default function Projects() {
   return (
     <div
       id="projects"
-      className={`flex flex-col items-center w-[1440px] h-[1039px] ${
+      className={`overflow-x-hidden flex flex-col items-center w-[1440px] h-[1039px] ${
         darkMode ? "bg-[#1A210B]" : "bg-[#CBF281]"
       } `}
     >
       <h1 id="projecttitle"
-        className={`text-[48px]  font-bold flex items-center font-inter w-[960px] h-[100px] mb-[40px] pt-[60px] ${
+        className={`text-[48px] font-bold flex items-center font-inter w-[960px] h-auto mb-[40px] pt-[60px] ${
           darkMode ? "text-[#CBF281]" : "text-[#4731D3]"
         }`}
       >
@@ -27,17 +27,17 @@ export default function Projects() {
       </h1>
       <section id="allprojects" className="gap-10 flex flex-col">
         {projects.filter(project => [0, 1].includes(project.id)).map((project) => (
-          <div
+          <div id="projectalanı"
             key={project.id}
             className={` flex justify-between items-center ${
               darkMode ? "bg-[#2B2727]" : "bg-white"
             }`}
           >
             <div
-              id="image"
+              id="imagealanı"
               className="border-r border-[#D2D2D2] flex w-[360px] h-[360px]"
             >
-              <img
+              <img id="image"
                 className="w-full h-full object-cover rounded-tl-[12px] rounded-bl-[12px]"
                 src={project.projectimg}
                 alt={project.title}
@@ -46,7 +46,7 @@ export default function Projects() {
             <section>
               <div
                 id="info"
-                className=" flex flex-col gap-y-4 pl-8 w-[584px] h-[247px]"
+                className=" flex flex-col gap-y-4 pl-8 w-[584px] h-auto px-5"
               >
                 <h2 id="subtitle"
                   className={`h-[32px] text-[32px] flex items-center ${
@@ -62,7 +62,7 @@ export default function Projects() {
                 >
                   {project.projectDetails?.description}
                 </p>
-                <div className="flex gap-2 ">
+                <div id="technologies" className="flex gap-2 ">
                   {project.projectDetails?.technologies?.map((tech) => (
                     <span
                       className={`${
@@ -78,7 +78,7 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-                <nav className="font-inter font-medium text-[16px] flex gap-11 underline">
+                <nav id="projectlinks" className="font-inter font-medium text-[16px] flex gap-11 underline">
                   <a
                     href={project.projectDetails?.viewSiteLink}
                     className={`${darkMode ? "text-[#CBF281]" : "text-[#120B39]"} `}
@@ -97,17 +97,17 @@ export default function Projects() {
           </div>
         ))}
         {projects.filter(project => [2].includes(project.id)).map((project) => (
-          <div
+          <div id="projectalanı2"
             key={project.id}
             className={` flex justify-between items-center ${
               darkMode ? "bg-[#2B2727]" : "bg-white"
             }`}
           >
             <div
-              id="image"
+              id="imagealanı"
               className="border-r border-[#D2D2D2] flex w-[360px] h-[360px]"
             >
-              <img
+              <img id="image"
                 className="w-full h-full object-cover rounded-tl-[12px] rounded-bl-[12px]"
                 src={project.projectimg}
                 alt={project.title}
@@ -116,7 +116,7 @@ export default function Projects() {
             <section>
               <div
                 id="info"
-                className=" flex flex-col gap-y-4 pl-8 w-[584px] h-[247px]"
+                className=" flex flex-col gap-y-4 pl-8 w-[584px] md:h-[247px] h-auto px-5"
               >
                 <h2 id="subtitle"
                   className={`h-[32px] text-[32px] flex items-center ${
@@ -132,7 +132,7 @@ export default function Projects() {
                 >
                   {project.projectDetails?.description}
                 </p>
-                <div className="flex gap-2 ">
+                <div id="technologies" className="flex gap-2 ">
                   {project.projectDetails?.technologies?.map((tech) => (
                     <span
                       className={`${
@@ -148,7 +148,7 @@ export default function Projects() {
                     </span>
                   ))}
                 </div>
-                <nav className="font-inter font-medium text-[16px] flex gap-11 underline">
+                <nav id="projectlinks" className="font-inter font-medium text-[16px] flex gap-11 underline">
                   <a
                     href={""}
                     onClick={handleViewSiteLink}
@@ -167,7 +167,7 @@ export default function Projects() {
             </section>
           </div>
         ))}
-              <Link className="flex justify-end text-[#4731D3] font-bold" to="/projects">view all projects</Link>
+              <Link className="flex md:mb-0 mb-5 justify-end text-[#4731D3] font-bold" to="/projects">view other projects</Link>
       </section>
 
     </div>

@@ -13,6 +13,7 @@ import './Header.css';
 
 
 
+
 export default function Header() {
   const { headerData, headerDataTr, darkMode, setDarkMode, language, setLanguage, footerData } =
     useContext(GlobalContext);
@@ -54,8 +55,8 @@ export default function Header() {
 
   
 
-  return (
-  <div id="header" className="relative font-inter pt-[10px] h-[671px] w-[1440px]">
+ return (
+  <div id="header" className="relative overflow-x-hidden font-inter pt-[10px] h-[671px] w-[1440px]">
   <div id="arkaplan" className="absolute top-0 left-0 w-full h-full flex z-[1]">
         <section
           id="left"
@@ -67,8 +68,8 @@ export default function Header() {
         ></section>
       </div>
   <div id="ust" className="relative w-[66%] h-[72px] flex items-center justify-between m-[2.5rem_auto] z-[10]">
-        <p
-          className={`${
+        <p id="isim"
+          className={`hidden md:block ${
             darkMode ? " text-[#CBF281]" : " text-[#CBF281]"
           } text-[32px]`}
         >
@@ -111,7 +112,7 @@ export default function Header() {
               {language === "en" ? "'YE GEÇ" : "ENGLISH"}
             </span>
           </a>
-          <label className="pl relative inline-flex items-center cursor-pointer">
+          <label id="darkalanı" className="pl w-full relative inline-flex items-center cursor-pointer">
             <input
               type="checkbox"
               checked={darkMode}
@@ -119,7 +120,7 @@ export default function Header() {
               value=""
               className="sr-only peer"
             />
-            <div
+            <div id="onoff"
               className="w-11 h-6 absolute left-[-40px] bg-gray-200 rounded-full peer 
              dark:bg-white peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full
                after:content-[''] after:absolute after:top-[2px] 
@@ -127,11 +128,11 @@ export default function Header() {
               after:rounded-full after:h-5 after:w-5 after:transition-all
                peer-checked:bg-[#8F88FF]"
             ></div>
-            <span
+            <span id="modename"
               className={`${
                 darkMode
                   ? "ms-3 mr-[-24px] pr-7 font-medium text-[#ffffff]"
-                  : "ms-3 mr-[5px] pr-7 font-medium text-gray-900 "
+                  : "ms-3 mr-[-24px] pr-7 font-medium text-gray-900 "
               }`}
             >
               {darkMode ? "Light Mode" : "Dark Mode"}
@@ -148,11 +149,11 @@ export default function Header() {
           >
             {language === "en" ? headerData.title : headerDataTr.title}
           </h1>
-          <p id="yazi" className="text-white text-[24px] ">
+          <p id="yazi" className={darkMode ? "text-[24px] text-white" : "text-[24px] mobile:text-white text-[#22223B]"}>
             {language === "en" ? headerData.text : headerDataTr.text}
           </p>
           <div id="logolar" className="flex gap-[20px]">
-            <button>
+            <button id="githubbutton">
               <a href={headerData.github}>
                 <div id="github">
                   <div
@@ -179,7 +180,7 @@ export default function Header() {
                 </div>
               </a>
             </button>
-            <button
+            <button id="linkedinbutton"
               className={`${
                 darkMode ? "border border-white rounded-[6px]" : ""
               }`}
@@ -212,8 +213,8 @@ export default function Header() {
           </div>
         </section>
 
-        <section id="resim">
-          <img src={githubfoto} className="w-[350px] h-[350px] rounded-[16px] z-[5] mb-[-23px] ml-[80px]" />
+        <section id="resimalanı" className="w-[40%] relative">
+          <img id="resim" src={githubfoto} className="w-[350px] h-[350px] rounded-[16px] z-[5] mb-[-23px] ml-[80px]" />
         </section>
       </div>
     </div>

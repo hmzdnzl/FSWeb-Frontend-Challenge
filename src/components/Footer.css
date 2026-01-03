@@ -1,8 +1,15 @@
-@media (max-width: 980px) {
+@media (max-width: 393px) {
     
     #footer-title {
         overflow-y: hidden;
-        height: 100px;
+        height:auto;
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        text-align: center;
+        flex-wrap: wrap;
+
     }
     #mailaddress {
      overflow-y: hidden;
@@ -22,6 +29,8 @@
      overflow-y: hidden;
     width: 45vw;
     font-size: 22px;
+    height: auto;
      
     }
+
 }

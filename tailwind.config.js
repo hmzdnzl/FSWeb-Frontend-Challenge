@@ -8,6 +8,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      screens: {
+        'mobile': '393px',
+      },
       fontFamily: {
         inter: ['Inter', 'sans-serif'],
       },

@@ -1,6 +1,86 @@
-@media (max-width: 980px) {
+@media (max-width: 393px) {
     #profilesubtitle {
 
         overflow-y: hidden;
     }
+    #profile{
+        height: auto;        
+        overflow-y:hidden;
+        width: auto;
+
+    }
+    #profileheader{
+        font-size: 32px;
+        height: auto;
+        width: 90vw;
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        margin: 0 auto;        
+        margin-bottom: 5px;        
+
+    }
+    #profiletriple{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto;
+        height: auto;
+        width: 90vw;
+        gap: 50px;
+  
+    }
+
+    #profileinfo{
+     
+        display: flex;        
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        
+    }
+
+    #educationlabel{
+        overflow-y: hidden;
+    }
+    #preferredrolelabel{
+        overflow-y: hidden;
+    }
+    #infos{
+      
+      padding-top: 0px;
+      margin-bottom: 22px;
+    }
+
+
+    #profileimagealanı{
+        width: 85vw;
+        height: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+ 
+    }
+    #profileimg{
+        width: auto;
+        height: auto;
+        margin: 0 auto;
+    }
+
+    #profileaboutme{
+        width: 80vw;
+        display: flex;
+        flex-direction: column;
+        height: auto;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+ 
+    }
+
 }
+    
